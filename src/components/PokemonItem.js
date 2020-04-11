@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import no_photo from '../img/no_photo.png';
 
 class PokemonItem extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class PokemonItem extends Component {
             weight: null,
             types: null,
             stats: {},
+            url: null
         }
     }
     giveClassName(nameOfCharacteristic, number) {
@@ -50,12 +52,12 @@ class PokemonItem extends Component {
                 } else {
                     return middle;
                 }
+            default:
+                return null;
         }
-        return null;
     }
-    componentDidMount() {
-        const url = this.props.info.url;
-        fetch(url)
+    getInfo = (urlFromProps) => {
+        fetch(urlFromProps)
             .then(response => response.json())
             .then(response => {
                 const stats = response.stats;
@@ -65,12 +67,13 @@ class PokemonItem extends Component {
                     statsForDisplay[key.stat.name] = key.base_stat;
                 }
 
-                return this.setState({
+                this.setState({
                     photoURL: response.sprites.front_default,
                     height: response.height,
                     weight: response.weight,
                     types: response.types,
-                    stats: statsForDisplay
+                    stats: statsForDisplay,
+                    url: urlFromProps
                 })
             })
             .catch(err => console.error(err));
@@ -78,12 +81,22 @@ class PokemonItem extends Component {
     render() {
         const name = this.props.info.name;
         const nameUpper = name[0].toUpperCase() + name.slice(1);
+        const urlFromProps = this.props.info.url;
 
-        const { photoURL, height, weight, types, stats } = this.state;
+        const { photoURL, height, weight, types, stats, url } = this.state;
+
+        if (urlFromProps !== url) {
+            this.getInfo(urlFromProps);
+            console.log(urlFromProps)
+        }
 
         return (
             <div className="wrap-item">
-                <img src={photoURL} alt="name" />
+                {photoURL ?
+                    <img src={photoURL} alt="pokemon" className="item-img" /> :
+                    <img src={no_photo} alt="no_photo" className="item-img" />
+                }
+                {/*<img src={photoURL} alt="no photo" className="item-img" /> */}
                 <h4>{nameUpper}</h4>
                 <table><tbody>
                     <tr>
@@ -132,3 +145,4 @@ class PokemonItem extends Component {
 }
 
 export default PokemonItem;
+// !

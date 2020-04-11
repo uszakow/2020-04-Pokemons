@@ -41,9 +41,7 @@ class Filter extends Component {
                         <option name="ice" value={15}>lodowe</option>
                         <option name="dragon" value={16}>smoki</option>
                         <option name="dark" value={17}>ciemne</option>
-                        <option name="fairy" value={18}>bajeczne</option>
-                        <option name="unknown" value={10001}>niewiadome</option>
-                        <option name="shadow" value={10002}>cieni</option>
+                        <option name="fairy" value={18}>bajeczne</option>                        
                     </select>
                 </label>
                 <button type="submit">Szukać według filtru</button>

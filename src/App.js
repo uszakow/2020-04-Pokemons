@@ -20,13 +20,15 @@ class App extends Component {
     /////
     // console.log(this.state)
     /////
+    const { filter } = this.state;
+
     return (
       <div>
         <header>
           <Filter handleChange={this.handleChange} />
         </header>
         <main>
-          {this.state.filter === 0 ? <ListOfPokemons /> : null}
+          <ListOfPokemons filter={filter} />
         </main>
       </div >
     );
