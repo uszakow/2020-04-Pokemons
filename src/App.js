@@ -2,30 +2,38 @@ import React, { Component } from 'react';
 import './App.css';
 
 import ListOfPokemons from './components/ListOfPokemons';
-import Filter from './components/Filter';
+import FilterOfSearch from './components/Filters/FilterOfSearch';
+import FilterOfResults from './components/Filters/FilterOfResults';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: 0
+      filterOfSearch: 0,
+      filterOfResults: {}
     }
   }
-  handleChange = (value) => {
+  handleFilterOfSearch = (value) => {
     this.setState({
-      filter: value
+      filterOfSearch: value
     })
   }
-  render() {    
-    const { filter } = this.state;
+  handleFilterOfResults = (obj) => {
+    this.setState({
+      filterOfResults: obj
+    })
+  }
+  render() {
+    const { filterOfSearch, filterOfResults } = this.state;
 
     return (
       <div>
         <header>
-          <Filter handleChange={this.handleChange} />
+          <FilterOfSearch handleChange={this.handleFilterOfSearch} />
+          <FilterOfResults handleChange={this.handleFilterOfResults} />
         </header>
         <main>
-          <ListOfPokemons filter={filter} />
+          <ListOfPokemons filterOfSearch={filterOfSearch} filterOfResults={filterOfResults} />
         </main>
       </div >
     );

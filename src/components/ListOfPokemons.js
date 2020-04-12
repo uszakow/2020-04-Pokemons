@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PokemonItem from './PokemonItem';
+import PokemonItem from './PokemonItems/PokemonItemControll';
 
 class ListOfPokemons extends Component {
     constructor(props) {
@@ -52,13 +52,13 @@ class ListOfPokemons extends Component {
     }
     render() {
         const { items, code } = this.state;
-        const { filter } = this.props;        
-        if (code !== filter) {
-            this.getInfo(filter);
+        const { filterOfSearch, filterOfResults } = this.props;
+        if (code !== filterOfSearch) {
+            this.getInfo(filterOfSearch);
         }
         return (
-            <div className={"wrap-list"}>               
-                {!items || items.map((item, index) => <PokemonItem key={index} info={item} />)}
+            <div className={"wrap-list"}>
+                {!items || items.map((item, index) => <PokemonItem key={index} info={item} filter={filterOfResults} />)}
             </div>
         )
     }

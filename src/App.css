@@ -52,15 +52,24 @@
   text-align: right;
   padding: 3px;
 }
-.low-level{
+.low-level {
   background-color: rgb(80, 204, 80);
 }
-.middle-level{
+.middle-level {
   background-color: rgb(226, 212, 17);
 }
-.high-level{
+.high-level {
   background-color: rgb(230, 44, 44);
 }
 .item-img {
   width: 100px;
+}
+
+.filter-of-results {
+  max-width: 350px;
+}
+.filter-of-results div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
