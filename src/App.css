@@ -40,11 +40,13 @@
 .wrap-list {
   display: flex;
   flex-wrap: wrap;
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
 }
 .wrap-item {
-  width: 20%;
+  width: 250px;
+  margin: 20px;
+  border: 1px solid green;
 }
 .characteristic {
   text-align: right;

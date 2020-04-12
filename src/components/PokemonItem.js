@@ -87,7 +87,6 @@ class PokemonItem extends Component {
 
         if (urlFromProps !== url) {
             this.getInfo(urlFromProps);
-            console.log(urlFromProps)
         }
 
         return (
@@ -95,8 +94,7 @@ class PokemonItem extends Component {
                 {photoURL ?
                     <img src={photoURL} alt="pokemon" className="item-img" /> :
                     <img src={no_photo} alt="no_photo" className="item-img" />
-                }
-                {/*<img src={photoURL} alt="no photo" className="item-img" /> */}
+                }                
                 <h4>{nameUpper}</h4>
                 <table><tbody>
                     <tr>
@@ -145,4 +143,3 @@ class PokemonItem extends Component {
 }
 
 export default PokemonItem;
-// !

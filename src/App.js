@@ -16,10 +16,7 @@ class App extends Component {
       filter: value
     })
   }
-  render() {
-    /////
-    // console.log(this.state)
-    /////
+  render() {    
     const { filter } = this.state;
 
     return (
