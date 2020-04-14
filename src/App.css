@@ -40,6 +40,7 @@
 .wrap-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   max-width: 1200px;
   margin: auto;
 }
@@ -65,16 +66,22 @@
   width: 100px;
 }
 
-.filter-of-results {
+.filters {
   max-width: 350px;
+  margin: 20px auto;
+  border: 3px double black;
 }
-.filter-of-results div {
+.filters div {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.num-page{
+.num-page {
   cursor: pointer;
   padding: 0 2px;
+}
+.pages{
+  display: flex;
+  justify-content: center;
 }

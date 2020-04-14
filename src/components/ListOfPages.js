@@ -53,10 +53,9 @@ class ListOfPages extends Component {
         if (totalItemsInState !== numberOfTotalItems) {
             this.createPages(numberOfTotalItems);
         }
-        // console.log(pagesForDisplay)
 
         return pages.length ? (
-            <>
+            <div className="pages">
                 <span className="num-page" onClick={() => this.handleClick(pages[0])}>Początek</span>
 
                 {pagesForDisplay.map((item, index) => {
@@ -66,11 +65,10 @@ class ListOfPages extends Component {
                 })}
 
                 <span className="num-page" onClick={() => this.handleClick(pages[pages.length - 1])}>Koniec</span>
-            </>
+            </div>
         ) : null
     }
 }
 
 
 export default ListOfPages;
-// !

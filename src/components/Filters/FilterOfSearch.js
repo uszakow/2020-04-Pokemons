@@ -20,7 +20,7 @@ class Filter extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="filters" onSubmit={this.handleSubmit}>
                 <label>Wybrać:
                 <select value={this.state.value} onChange={this.handleChange}>
                         <option name="all" value={0}>wszystkie</option>
@@ -41,7 +41,7 @@ class Filter extends Component {
                         <option name="ice" value={15}>lodowe</option>
                         <option name="dragon" value={16}>smoki</option>
                         <option name="dark" value={17}>ciemne</option>
-                        <option name="fairy" value={18}>bajeczne</option>                        
+                        <option name="fairy" value={18}>bajeczne</option>
                     </select>
                 </label>
                 <button type="submit">Szukać według filtru</button>

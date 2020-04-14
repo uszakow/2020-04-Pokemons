@@ -42,7 +42,7 @@ class App extends Component {
 
     return (
       <div>
-        <header>
+        <header className="wrap-list">
           <FilterOfSearch handleChange={this.handleFilterOfSearch} />
           <FilterOfResults handleChange={this.handleFilterOfResults} />
         </header>

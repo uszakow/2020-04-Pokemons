@@ -35,7 +35,7 @@ class FilterOfResults extends Component {
     }
     render() {
         return (
-            <form className="filter-of-results" onSubmit={this.handleSubmit}>
+            <form className="filters" onSubmit={this.handleSubmit}>
                 <div>Nie pokazywać wyników, nie odpowiadających kryteriom</div>
                 <div>
                     <span>Wysokość</span>
