@@ -38,59 +38,59 @@ class FilterOfResults extends Component {
             <form className="filters" onSubmit={this.handleSubmit}>
                 <div>Nie pokazywać wyników, nie odpowiadających kryteriom</div>
                 <div>
-                    <span>Wysokość</span>
-                    <span>
+                    <div>Wysokość</div>
+                    <div>
                         <label>max
                         <input type="number" onChange={(e) => this.handleChange(e, "heightMax")} />
                         </label>
                         <label>min
                         <input type="number" onChange={(e) => this.handleChange(e, "heightMin")} />
                         </label>
-                    </span>
+                    </div>
                 </div>
                 <div>
-                    <span>Waga</span>
-                    <span>
+                    <div>Waga</div>
+                    <div>
                         <label>max
                         <input type="number" onChange={(e) => this.handleChange(e, "weightMax")} />
                         </label>
                         <label>min
                         <input type="number" onChange={(e) => this.handleChange(e, "weightMin")} />
                         </label>
-                    </span>
+                    </div>
                 </div>
                 <div>
-                    <span>Szybkość</span>
-                    <span>
+                    <div>Szybkość</div>
+                    <div>
                         <label>max
                         <input type="number" onChange={(e) => this.handleChange(e, "speedMax")} />
                         </label>
                         <label>min
                         <input type="number" onChange={(e) => this.handleChange(e, "speedMin")} />
                         </label>
-                    </span>
+                    </div>
                 </div>
                 <div>
-                    <span>Atak</span>
-                    <span>
+                    <div>Atak</div>
+                    <div>
                         <label>max
                         <input type="number" onChange={(e) => this.handleChange(e, "attackMax")} />
                         </label>
                         <label>min
                         <input type="number" onChange={(e) => this.handleChange(e, "attackMin")} />
                         </label>
-                    </span>
+                    </div>
                 </div>
                 <div>
-                    <span>Obrona</span>
-                    <span>
+                    <div>Obrona</div>
+                    <div>
                         <label>max
                         <input type="number" onChange={(e) => this.handleChange(e, "defenseMax")} />
                         </label>
                         <label>min
                         <input type="number" onChange={(e) => this.handleChange(e, "defenseMin")} />
                         </label>
-                    </span>
+                    </div>
                 </div>
                 <button type="submit">Filtruj!</button>
             </form>
