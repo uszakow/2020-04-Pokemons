@@ -73,3 +73,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.num-page{
+  cursor: pointer;
+  padding: 0 2px;
+}

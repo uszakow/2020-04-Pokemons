@@ -66,7 +66,6 @@ class PokemonItem extends Component {
         return true
     }
     render() {
-
         const urlFromProps = this.props.info.url;
         const { url } = this.state;
 

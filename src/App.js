@@ -4,13 +4,16 @@ import './App.css';
 import ListOfPokemons from './components/ListOfPokemons';
 import FilterOfSearch from './components/Filters/FilterOfSearch';
 import FilterOfResults from './components/Filters/FilterOfResults';
+import ListOfPages from './components/ListOfPages';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       filterOfSearch: 0,
-      filterOfResults: {}
+      filterOfResults: {},
+      offset: 0,
+      numberOfTotalItems: null
     }
   }
   handleFilterOfSearch = (value) => {
@@ -23,8 +26,19 @@ class App extends Component {
       filterOfResults: obj
     })
   }
+  setOffset = (number) => {
+    this.setState({
+      offset: number
+    })
+  }
+  setNumberOfTotalItems = (numberOfTotalItems, offset) => {
+    this.setState({
+      numberOfTotalItems,
+      offset
+    })
+  }
   render() {
-    const { filterOfSearch, filterOfResults } = this.state;
+    const { filterOfSearch, filterOfResults, offset, numberOfTotalItems } = this.state;
 
     return (
       <div>
@@ -33,7 +47,16 @@ class App extends Component {
           <FilterOfResults handleChange={this.handleFilterOfResults} />
         </header>
         <main>
-          <ListOfPokemons filterOfSearch={filterOfSearch} filterOfResults={filterOfResults} />
+          <ListOfPages
+            numberOfTotalItems={numberOfTotalItems}
+            setOffset={this.setOffset}
+          />
+          <ListOfPokemons
+            filterOfSearch={filterOfSearch}
+            filterOfResults={filterOfResults}
+            offset={offset}
+            setNumberOfTotalItems={this.setNumberOfTotalItems}
+          />
         </main>
       </div >
     );
